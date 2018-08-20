@@ -1,0 +1,67 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="flickrSearchApp">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Node/Angular Todo App</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="bootstrap-4.1.1/dist/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	
+	
+
+
+	<!-- SPELLS --><!-- load angular -->
+	<script src="angular-1.5.0-rc.2/angular.min.js"></script>
+	
+	<script src="angular-1.5.0-rc.2/angular-animate.js"></script>
+	<script src="angular-1.5.0-rc.2/angular-route.min.js"></script>
+	<script src="angular-1.5.0-rc.2/angular-resource.min.js"></script>
+	<script src="bootstrap-4.1.1/dist/js/bootstrap.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/controllers/core.js"></script> <!-- load our main application -->
+	<script src="js/services/flickr_services.js"></script>
+
+	 <!-- loadingbar -->
+	 <script src="angular-1.5.0-rc.2/loading-bar.js"></script>
+	 <link href='css/loading-bar.css' rel='stylesheet' />
+	 <link rel="stylesheet" href="css/app.css">
+	
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="flickrSearchController">
+		
+	
+       <nav class="navbar navbar-dark bg-dark">
+		   <div class="col-sm-3">
+		   			<a class="navbar-brand" href="#" >flickr</a>
+			</div>
+			<div class="col-sm-9">
+			<form class="form-inline" ng-submit="getPhotos(searchBy)">
+				<div  style="width: 100%;position:relative" >
+						<div id="searchicon"></div>
+						</div>
+						
+						<input placeholder="Type a name to search on Flickr feeds and hit enter"  
+				class="form-control form-control-md col-12" type="text" ng-model="searchBy" placeholder="Search"  aria-label="Search">
+			</div>
+		</div>
+			</form>
+	   </nav>
+	  
+<div>
+	  
+		   <div ng-include="'feedResults.html'"></div>
+	  
+	
+	</div>
+
+</body>
+</html>

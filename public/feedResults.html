@@ -1,0 +1,22 @@
+<div>
+        <div class="container main">
+                <br />
+                <br />
+                              
+                  <div class="row" ng-repeat="image in feeds | limitTo: resultCount track by $index" ng-if="$index % 4 == 0">
+                    <div class="col-sm-3" 
+                      ng-repeat="i in [$index, $index + 1, $index + 2, $index + 3]" 
+                      ng-if="feeds[i] != null">
+                        
+                      <img ng-src="{{feeds[i].media.m}}" title="{{feeds[i].title}}" >
+                        <br />
+                        <br />
+                     <div>
+                    </div>
+                 
+               </div>
+               </div>
+                  
+
+
+</div>
